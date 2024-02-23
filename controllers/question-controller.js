@@ -49,7 +49,10 @@ const getAllQuestions = async (req, res) => {
 
 const getLimitedQuestions = async (req, res) => {
   try {
-    const questions = await Question.find({ count: { $lt: 2 } }, { roomId: 1 });
+    const questions = await Question.find(
+      { count: { $lt: 2 } },
+      { roomId: 1, language: 1 }
+    );
 
     if (!questions) {
       return res.status(404).json({ error: "Questions not found" });
