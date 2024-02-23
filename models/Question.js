@@ -10,6 +10,10 @@ const questionSchema = new mongoose.Schema({
     type: String,
     default: () => nanoid.nanoid(6),
   },
+  count: {
+    type: Number,
+    default: 0, // You can set a default value if needed
+  },
 });
 
 const Question = mongoose.model("Question", questionSchema);
