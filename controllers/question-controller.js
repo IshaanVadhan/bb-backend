@@ -15,9 +15,9 @@ const createQuestion = async (req, res) => {
 
 const getQuestion = async (req, res) => {
   try {
-    const { questionId } = req.query;
+    const { roomId } = req.query;
 
-    const question = await Question.findById(questionId);
+    const question = await Question.findOne({ roomId: roomId });
 
     if (!question) {
       return res.status(404).json({ error: "Question not found" });

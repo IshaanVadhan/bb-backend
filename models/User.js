@@ -20,9 +20,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  questionId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Question",
+  roomId: {
+    type: String, // Assuming roomId is a String
     required: true,
   },
 });

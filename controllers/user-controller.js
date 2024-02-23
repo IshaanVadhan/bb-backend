@@ -9,7 +9,7 @@ const register = async (req, res) => {
     member2Name,
     member3Name,
     password,
-    questionId,
+    roomId,
   } = req.body;
   try {
     const user = await User.create({
@@ -20,7 +20,7 @@ const register = async (req, res) => {
       member2Name,
       member3Name,
       password,
-      questionId,
+      roomId,
     });
 
     if (!user) {

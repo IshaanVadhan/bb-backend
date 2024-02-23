@@ -1,11 +1,11 @@
 const Solution = require("../models/Solution");
 
 const createSolution = async (req, res) => {
-  const { submittedBy, questionId, bugId, solutionCode } = req.body;
+  const { submittedBy, roomId, bugId, solutionCode } = req.body;
   try {
     const solution = await Solution.create({
       submittedBy,
-      questionId,
+      roomId,
       bugId,
       solutionCode,
     });

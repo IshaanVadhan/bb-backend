@@ -6,9 +6,8 @@ const bugSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  questionId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Question",
+  roomId: {
+    type: String, // Assuming roomId is a String
     required: true,
   },
   buggedCode: {

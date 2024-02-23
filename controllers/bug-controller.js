@@ -1,10 +1,9 @@
 const Bug = require("../models/Bug");
 
-
 const createBug = async (req, res) => {
-  const { submittedBy, questionId, buggedCode } = req.body;
+  const { submittedBy, roomId, buggedCode } = req.body;
   try {
-    const bug = await Bug.create({ submittedBy, questionId, buggedCode });
+    const bug = await Bug.create({ submittedBy, roomId, buggedCode });
     if (!bug) {
       return res.status(400).json({ error: "Could not create bug" });
     }
@@ -18,11 +17,11 @@ const createBug = async (req, res) => {
 
 const getBugsByQuestionAndTeam = async (req, res) => {
   try {
-    const questionId = req.query.questionId;
+    const roomId = req.query.roomId;
     const userId = req.query.submittedBy;
-    //console.log(questionId+" "+userId)
+    //console.log(roomId+" "+userId)
     const bugs = await Bug.findOne({
-      questionId,
+      roomId,
       submittedBy: { $ne: userId },
     });
 
