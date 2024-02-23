@@ -1,4 +1,5 @@
 const User = require("../models/User.js");
+const Question = require("../models/Question.js");
 
 const register = async (req, res) => {
   const {
@@ -12,15 +13,15 @@ const register = async (req, res) => {
     roomId,
   } = req.body;
   try {
-    // const question = await Question.findOne({ roomId: roomId });
+    const question = await Question.findOne({ roomId: roomId });
 
-    // if (!question) {
-    //   return res.status(400).json({ error: "Question not found" });
-    // }
+    if (!question) {
+      return res.status(400).json({ error: "Question not found" });
+    }
 
-    // // Increment the count
-    // question.count += 1;
-    // await question.save();
+    // Increment the count
+    question.count += 1;
+    await question.save();
 
     const user = await User.create({
       leaderName,
