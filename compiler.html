@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bug Battle</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: #36393f;
+        color: #fff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+        font-weight: 600;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      form {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      textarea {
+        background-color: #40444b;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-family: monospace;
+        font-size: 14px;
+        margin: 10px 0;
+        padding: 10px;
+        resize: none;
+        width: 100%;
+      }
+
+      select {
+        background-color: #40444b;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        margin: 10px 0;
+        padding: 10px;
+        width: 150px;
+      }
+
+      input[type="radio"] {
+        margin: 0 10px;
+      }
+
+      input[type="submit"] {
+        background-color: #7289da;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        margin-top: 20px;
+        padding: 10px 20px;
+        text-transform: uppercase;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #677bc4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Compiler</h1>
+      <form id="myform" name="myform" method="post" action="compile">
+        <h3>Code</h3>
+        <textarea name="code" id="code" cols="100" rows="13"></textarea>
+        <h3>Input</h3>
+        <textarea name="input" id="input" cols="100" rows="10"></textarea>
+        <div>
+          <label for="lang">Language:</label>
+          <select name="lang" id="lang">
+            <option value="C++">C++</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+          </select>
+        </div>
+        <div>
+          <input type="radio" name="inputRadio" id="inputRadio1" value="true" />
+          <label for="inputRadio1">Yes</label>
+          <input
+            type="radio"
+            name="inputRadio"
+            id="inputRadio2"
+            value="false"
+          />
+          <label for="inputRadio2">No</label>
+        </div>
+        <input type="submit" value="Submit" name="submit" />
+      </form>
+    </div>
+  </body>
+</html>
